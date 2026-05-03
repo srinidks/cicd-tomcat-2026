@@ -1,16 +1,15 @@
 <html>
 <body>
-<h1><font color='green'> Welcome to Cloudaseem Youtube Channel- yours Destination for Cloud AI & Devops Training <font></h1>
 
-<a href="https://www.youtube.com/@clouddevopswithaseem">Click Here To See our youtube Channel</a>
-  
-  <h2> Website : https://www.cloudaseem.com </h2>
-  
-  <h3> Linkdien : Follow us  : www.linkedin.com/in/mohammed-aseem-akram  </h3>
+<h1 style="color:green;">Welcome to CI/CD Project</h1>
 
-  <h4> Subscribe & Share the Channel </h4>
+<h3>This is a simple demo application</h3>
 
-  <h5> https://github.com/Aseemakram19  <h5> 
+<p>GitHub Profile: 
+  <a href="https://github.com/srinidks" target="_blank">
+    https://github.com/srinidks
+  </a>
+</p>
 
 </body>
 </html>
