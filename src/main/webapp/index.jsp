@@ -3,6 +3,8 @@
 
 <h1 style="color:green;">Welcome to CI/CD Project</h1>
 
+<h2>Updated code</h3>
+
 <h3>This is a simple demo application</h3>
 
 <p>GitHub Profile: 
