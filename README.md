@@ -227,8 +227,18 @@ Verify:
 ```bash
 trivy --version
 ```
-
 ---
+
+# step 7: Install the plugins:
+```text
+Manage Jenkins Plugins -> available plugins
+
+* git
+* ssh-agent
+* Maven Integration
+* docker
+* SonarQube Scanner
+* Pipeline: Stage View
 
 # Step 7 : Configure Credentials in Jenkins
 
