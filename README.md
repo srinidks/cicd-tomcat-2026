@@ -222,13 +222,11 @@ sudo apt-get update
 sudo apt-get install trivy
 ```
 
-# 2 Verify:
-
+*  Verify:
 ```bash
 trivy --version
 ```
----
-```text
+
 * Scan the image and file Repository
 ```bash
 trivy fs .
@@ -237,8 +235,8 @@ trivy image httpd:latest
 * Fail pipeline on critical/high vulns
 ```bash
 trivy image --exit-code 1 --severity HIGH,CRITICAL httpd:latest
-
-* JSON output (good for parsing/archiving)
+```
+* JSON output
 ```bash
 trivy image --format json -o trivy-image-report.json tomcat-app
 ```
