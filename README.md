@@ -212,8 +212,8 @@ Password: admin
 
 ---
 
-# Step 6 : Install Trivy
-
+# Step 6 : Install Trivy, Image and File System Scan
+# 1 Install Trivy:
 ```bash
 sudo apt-get install wget gnupg
 wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | gpg --dearmor | sudo tee /usr/share/keyrings/trivy.gpg > /dev/null
@@ -222,13 +222,24 @@ sudo apt-get update
 sudo apt-get install trivy
 ```
 
-Verify:
+# 2 Verify:
 
 ```bash
 trivy --version
 ```
 ---
+# 3 Scan the image and file Repository
+trivy fs .	
+trivy image httpd:latest
+# Fail pipeline on critical/high vulns
+trivy image --exit-code 1 --severity HIGH,CRITICAL httpd:latest
 
+# JSON output (good for parsing/archiving)
+trivy image --format json -o trivy-image-report.json myapp:latest
+
+# Ignore unfixed vulnerabilities (no patch available yet)
+trivy image --ignore-unfixed myapp:latest
+---
 # step 7: Install the plugins:
 ```text
 Manage Jenkins Plugins -> available plugins
