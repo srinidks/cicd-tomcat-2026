@@ -236,6 +236,10 @@ trivy image httpd:latest
 ```bash
 trivy image --exit-code 1 --severity HIGH,CRITICAL httpd:latest
 ```
+* scan file system
+  ```bash
+  trivy fs --scanners vuln,secret,misconfig --severity HIGH,CRITICAL .
+  ```  
 * JSON output
 ```bash
 trivy image --format json -o trivy-image-report.json tomcat-app
