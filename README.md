@@ -228,17 +228,24 @@ sudo apt-get install trivy
 trivy --version
 ```
 ---
-# 3 Scan the image and file Repository
-trivy fs .	
+```text
+* Scan the image and file Repository
+```bash
+trivy fs .
 trivy image httpd:latest
-# Fail pipeline on critical/high vulns
+```
+* Fail pipeline on critical/high vulns
+```bash
 trivy image --exit-code 1 --severity HIGH,CRITICAL httpd:latest
 
-# JSON output (good for parsing/archiving)
-trivy image --format json -o trivy-image-report.json myapp:latest
-
-# Ignore unfixed vulnerabilities (no patch available yet)
-trivy image --ignore-unfixed myapp:latest
+* JSON output (good for parsing/archiving)
+```bash
+trivy image --format json -o trivy-image-report.json tomcat-app
+```
+* Ignore unfixed vulnerabilities (no patch available yet)
+```bash
+trivy image --ignore-unfixed tomcat-app
+```
 ---
 # step 7: Install the plugins:
 ```text
