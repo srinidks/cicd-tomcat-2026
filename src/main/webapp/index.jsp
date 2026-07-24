@@ -4,7 +4,7 @@
 <h1 style="color:green;">Welcome to CI/CD Project</h1>
 
 
-<h3>The code updated on 01-JUN-2026</h3>
+<h3>The code updated on 20-Jun-2026</h3>
 
 <h3>This is a simple demo application</h3>
 
