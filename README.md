@@ -262,6 +262,7 @@ Manage Jenkins Plugins -> available plugins
 * Maven Integration
 * docker
 * SonarQube Scanner
+```
 
 # Step 8 : Generate the tokens
 
@@ -275,10 +276,11 @@ User Name -> Account settings -> Security->New Access Token-> asign token name->
 ------ Sonarqube token Generate ----------
 
 SonarCloud account-> User Profile-> My Account->Security->Global Analysis Token
-```
 
-# Confugre the Credentails in Jenkins
-Setting -? manage Jenkins- Credentils
+# Step 9 : Configure the Credentails in Jenkins
+```text
+Setting -> manage Jenkins -> Credentils
+```
 
 ## GitHub Credential configure in Jenkins
 
@@ -321,7 +323,7 @@ sonar-token
 
 ---
 
-# Step 9 : Configure SonarQube in Jenkins
+# Step 10 : Configure SonarQube in Jenkins
 
 Go to:
 
@@ -339,7 +341,7 @@ Under SonarQube Servers:
 
 ---
 
-# Step 10 : Configure GitHub Webhook Trigger
+# Step 11 : Configure GitHub Webhook Trigger
 
 ## Install Plugins
 
@@ -426,7 +428,7 @@ Add webhook
 
 ---
 
-# Step 11 : Create Jenkins Pipeline Job
+# Step 12 : Create Jenkins Pipeline Job
 
 ## Pipeline Stages
 
@@ -476,7 +478,7 @@ Runs Docker container automatically.
 
 ---
 
-# Step 12 : Jenkins Pipeline Script
+# Step 13 : Jenkins Pipeline Script
 
 ```groovy
 pipeline {
@@ -560,19 +562,19 @@ pipeline {
             echo 'Pipeline failed'
         }
     }
-}
+
 ```
 
 ---
 
-# Step 13 : Trigger Jenkins Job
+# Step 14 : Trigger Jenkins Job
 
 * Click Build Now
 * Verify all stages complete successfully
 
 ---
 
-# Step 14 : Verify GitHub Webhook
+# Step 15 : Verify GitHub Webhook
 
 Push code changes:
 
@@ -588,7 +590,7 @@ Verify Jenkins job triggers automatically.
 
 ---
 
-# Step 15 : Access Application
+# Step 16 : Access Application
 
 ```text
 http://PUBLIC-IP:8010/tomcat-app
@@ -596,7 +598,7 @@ http://PUBLIC-IP:8010/tomcat-app
 
 ---
 
-# Step 16 : Verify Docker Container
+# Step 17 : Verify Docker Container
 
 ```bash
 docker ps
@@ -604,7 +606,7 @@ docker ps
 
 ---
 
-# Step 17 : Verify Docker Images
+# Step 18 : Verify Docker Images
 
 ```bash
 docker images
@@ -612,7 +614,7 @@ docker images
 
 ---
 
-# Step 18 : Verify SonarQube Dashboard
+# Step 19 : Verify SonarQube Dashboard
 
 ```text
 http://PUBLIC-IP:9000
@@ -620,7 +622,7 @@ http://PUBLIC-IP:9000
 
 ---
 
-# Step 19 : Verify Trivy Scan
+# Step 20 : Verify Trivy Scan
 
 ```bash
 trivy image srinidks/tomcat-app:1
