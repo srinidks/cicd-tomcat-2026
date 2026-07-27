@@ -253,29 +253,38 @@ trivy image --ignore-unfixed tomcat-app
 ```text
 Manage Jenkins Plugins -> available plugins
 
-* git
-* ssh-agent
+*  Git
+* GitHub Integration Plugin
+* Git Plugin
+* Pipeline
+* SSH Agent 
+* Pipeline Stage View
 * Maven Integration
 * docker
 * SonarQube Scanner
-* Pipeline: Stage View
 
-# Step 7 : Configure Credentials in Jenkins
+# Step 8 : Generate the tokens
 
-Go to:
+--- GITHUB token Generate ------
 
-```text
-Manage Jenkins → Credentials
+User Name ->Settings ->Developer settings-> Personal access tokens -> click Fine-grained tokens -> Generate new token
+
+---- DockerHub token Generate -----------
+User Name -> Account settings -> Security->New Access Token-> asign token name-> generate token
+
+------ Sonarqube token Generate ----------
+
+SonarCloud account-> User Profile-> My Account->Security->Global Analysis Token
 ```
 
-Add the following credentials.
+# Confugre the Credentails in Jenkins
+Setting -? manage Jenkins- Credentils
 
----
+## GitHub Credential configure in Jenkins
 
-## GitHub Credential
-
+* Kind: Secret Username and Password
 * Username
-* GitHub Personal Access Token
+* password               -> The password is GitHub Personal Access Token
 
 Credential ID:
 
@@ -285,10 +294,11 @@ GitHub
 
 ---
 
-## DockerHub Credential
+## DockerHub Credential configure in Jenkins
 
-* DockerHub Username
-* DockerHub Access Token
+* Kind: Secret Username and Password
+* Username
+* password        ->  The password is dockerhub API Token
 
 Credential ID:
 
@@ -298,7 +308,7 @@ DokckerHub
 
 ---
 
-## SonarQube Token
+## SonarQube Token configure in Jenkins
 
 * Kind: Secret Text
 * Add SonarQube token
@@ -311,7 +321,7 @@ sonar-token
 
 ---
 
-# Step 8 : Configure SonarQube in Jenkins
+# Step 9 : Configure SonarQube in Jenkins
 
 Go to:
 
@@ -329,7 +339,7 @@ Under SonarQube Servers:
 
 ---
 
-# Step 9 : Configure GitHub Webhook Trigger
+# Step 10 : Configure GitHub Webhook Trigger
 
 ## Install Plugins
 
@@ -416,7 +426,7 @@ Add webhook
 
 ---
 
-# Step 10 : Create Jenkins Pipeline Job
+# Step 11 : Create Jenkins Pipeline Job
 
 ## Pipeline Stages
 
@@ -466,7 +476,7 @@ Runs Docker container automatically.
 
 ---
 
-# Step 11 : Jenkins Pipeline Script
+# Step 12 : Jenkins Pipeline Script
 
 ```groovy
 pipeline {
@@ -555,14 +565,14 @@ pipeline {
 
 ---
 
-# Step 12 : Trigger Jenkins Job
+# Step 13 : Trigger Jenkins Job
 
 * Click Build Now
 * Verify all stages complete successfully
 
 ---
 
-# Step 13 : Verify GitHub Webhook
+# Step 14 : Verify GitHub Webhook
 
 Push code changes:
 
@@ -578,7 +588,7 @@ Verify Jenkins job triggers automatically.
 
 ---
 
-# Step 14 : Access Application
+# Step 15 : Access Application
 
 ```text
 http://PUBLIC-IP:8010/tomcat-app
@@ -586,7 +596,7 @@ http://PUBLIC-IP:8010/tomcat-app
 
 ---
 
-# Step 15 : Verify Docker Container
+# Step 16 : Verify Docker Container
 
 ```bash
 docker ps
@@ -594,7 +604,7 @@ docker ps
 
 ---
 
-# Step 16 : Verify Docker Images
+# Step 17 : Verify Docker Images
 
 ```bash
 docker images
@@ -602,7 +612,7 @@ docker images
 
 ---
 
-# Step 17 : Verify SonarQube Dashboard
+# Step 18 : Verify SonarQube Dashboard
 
 ```text
 http://PUBLIC-IP:9000
@@ -610,7 +620,7 @@ http://PUBLIC-IP:9000
 
 ---
 
-# Step 18 : Verify Trivy Scan
+# Step 19 : Verify Trivy Scan
 
 ```bash
 trivy image srinidks/tomcat-app:1
